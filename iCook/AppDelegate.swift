@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Setting status bar color to white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
         //Parse client key for iCook
         Parse.setApplicationId("78tT2tK5pGpkGKlhqFEciW5Rjh69pVFcqoezVVoB",

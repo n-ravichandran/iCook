@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+class ViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource, UIScrollViewDelegate {
 
+    @IBOutlet var highlightBar: UIView!
     var pageController: UIPageViewController?
     var pageContent = ["Dishes", "Cooks"]
-    
+    var currentIndex: Int?
+    var previousIndex: Int?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,22 +34,46 @@ class ViewController: UIViewController, UIPageViewControllerDelegate, UIPageView
         self.view.addSubview((self.pageController?.view)!)
         self.pageController?.didMoveToParentViewController(self)
         
+        for views in (self.pageController?.view.subviews)!{
+            if views.isKindOfClass(UIScrollView){
+                (views as! UIScrollView).delegate = self
+            }
+        }
+        
+    }
+    
+
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        updateMenuHiglight()
     }
 
+    func updateMenuHiglight(){
+        
+        if currentIndex == 0 && previousIndex == 1{
+            UIView.animateWithDuration(0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.6, options: .TransitionCurlDown, animations: { () -> Void in
+                self.highlightBar.frame.origin.x -= 160
+                }, completion: nil)
+            previousIndex = 0
+        }else if currentIndex == 1 && previousIndex == 0{
+            UIView.animateWithDuration(0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.6, options: .TransitionCurlDown, animations: { () -> Void in
+                self.highlightBar.frame.origin.x += 160
+                }, completion: nil)
+            previousIndex = 1
+            
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     func viewControllerAtIndex(index: Int) -> PageContentViewController{
-        
         if (pageContent.count == 0) || (index >= pageContent.count){
             return PageContentViewController()
         }
         
         let dataViewController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("PageContentView") as! PageContentViewController
-        dataViewController.titleText = pageContent[0]
-        dataViewController.titleText2 = pageContent[1]
         dataViewController.pageIndex = index
 
         return dataViewController
@@ -56,20 +83,25 @@ class ViewController: UIViewController, UIPageViewControllerDelegate, UIPageView
         
         let vc = viewController as! PageContentViewController
         var index = vc.pageIndex
-        
+        previousIndex = currentIndex
+        currentIndex = index
+        print("Before---current:\(currentIndex) previous:\(previousIndex)")
         if (index == 0) || (index == NSNotFound){
             return nil
         }
         
         index!--
+        
         return self.viewControllerAtIndex(index!)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        
+
         let vc = viewController as! PageContentViewController
         var index = vc.pageIndex
-        
+        previousIndex = currentIndex
+        currentIndex = index
+        print("After---current:\(currentIndex) previous:\(previousIndex)")
         if (index == NSNotFound){
             return nil
         }

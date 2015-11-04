@@ -25,10 +25,12 @@
 		421D45E61BE0076A0063053C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 421D45E51BE0076A0063053C /* libz.tbd */; };
 		421D45E81BE007770063053C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 421D45E71BE007770063053C /* libsqlite3.tbd */; };
 		421D45ED1BE013100063053C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D45EC1BE013100063053C /* SWRevealViewController.m */; };
-		421D45F01BE0181A0063053C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D45EF1BE0181A0063053C /* HomeTableViewController.swift */; };
 		421D45F31BE0190C0063053C /* DishesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D45F11BE0190C0063053C /* DishesTableViewCell.swift */; };
 		421D45F41BE0190C0063053C /* DishesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421D45F21BE0190C0063053C /* DishesTableViewCell.xib */; };
 		421D45F61BE154130063053C /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D45F51BE154130063053C /* PageContentViewController.swift */; };
+		429CA9F11BE96C9700A84D0E /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429CA9F01BE96C9700A84D0E /* UserTableViewController.swift */; };
+		429CA9F41BE96D7D00A84D0E /* UserImageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429CA9F21BE96D7D00A84D0E /* UserImageTableCell.swift */; };
+		429CA9F51BE96D7D00A84D0E /* UserImageTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 429CA9F31BE96D7D00A84D0E /* UserImageTableCell.xib */; };
 		42F909151BBB6091004C38E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F909141BBB6091004C38E8 /* AppDelegate.swift */; };
 		42F909171BBB6091004C38E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F909161BBB6091004C38E8 /* ViewController.swift */; };
 		42F9091A1BBB6091004C38E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F909181BBB6091004C38E8 /* Main.storyboard */; };
@@ -77,10 +79,12 @@
 		421D45EA1BE0130F0063053C /* iCook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCook-Bridging-Header.h"; sourceTree = "<group>"; };
 		421D45EB1BE013100063053C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		421D45EC1BE013100063053C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		421D45EF1BE0181A0063053C /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		421D45F11BE0190C0063053C /* DishesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishesTableViewCell.swift; sourceTree = "<group>"; };
 		421D45F21BE0190C0063053C /* DishesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DishesTableViewCell.xib; sourceTree = "<group>"; };
 		421D45F51BE154130063053C /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		429CA9F01BE96C9700A84D0E /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		429CA9F21BE96D7D00A84D0E /* UserImageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageTableCell.swift; sourceTree = "<group>"; };
+		429CA9F31BE96D7D00A84D0E /* UserImageTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserImageTableCell.xib; sourceTree = "<group>"; };
 		42F909111BBB6091004C38E8 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F909141BBB6091004C38E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42F909161BBB6091004C38E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -233,8 +237,8 @@
 		42F909451BBB60A2004C38E8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				429CA9F01BE96C9700A84D0E /* UserTableViewController.swift */,
 				421D45F51BE154130063053C /* PageContentViewController.swift */,
-				421D45EF1BE0181A0063053C /* HomeTableViewController.swift */,
 				42F909161BBB6091004C38E8 /* ViewController.swift */,
 			);
 			name = Controller;
@@ -244,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				42F909181BBB6091004C38E8 /* Main.storyboard */,
+				429CA9F31BE96D7D00A84D0E /* UserImageTableCell.xib */,
 				421D45F21BE0190C0063053C /* DishesTableViewCell.xib */,
 				42F909201BBB6091004C38E8 /* LaunchScreen.storyboard */,
 			);
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				421D45F11BE0190C0063053C /* DishesTableViewCell.swift */,
+				429CA9F21BE96D7D00A84D0E /* UserImageTableCell.swift */,
 				42F9091B1BBB6091004C38E8 /* iCook.xcdatamodeld */,
 			);
 			name = Model;
@@ -380,6 +386,7 @@
 				42F9091F1BBB6091004C38E8 /* Assets.xcassets in Resources */,
 				42F9091A1BBB6091004C38E8 /* Main.storyboard in Resources */,
 				421D45F41BE0190C0063053C /* DishesTableViewCell.xib in Resources */,
+				429CA9F51BE96D7D00A84D0E /* UserImageTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,9 +415,10 @@
 				42F909171BBB6091004C38E8 /* ViewController.swift in Sources */,
 				42F909151BBB6091004C38E8 /* AppDelegate.swift in Sources */,
 				421D45F61BE154130063053C /* PageContentViewController.swift in Sources */,
+				429CA9F11BE96C9700A84D0E /* UserTableViewController.swift in Sources */,
+				429CA9F41BE96D7D00A84D0E /* UserImageTableCell.swift in Sources */,
 				421D45F31BE0190C0063053C /* DishesTableViewCell.swift in Sources */,
 				421D45ED1BE013100063053C /* SWRevealViewController.m in Sources */,
-				421D45F01BE0181A0063053C /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

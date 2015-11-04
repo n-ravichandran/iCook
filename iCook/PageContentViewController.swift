@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class PageContentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
@@ -25,6 +26,17 @@ class PageContentViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.registerNib(UINib(nibName: "DishesTableViewCell", bundle: nil), forCellReuseIdentifier: "DishCell")
         tableView.separatorStyle = .None
         tableView.rowHeight = 180
+        
+        let query = PFQuery(className: "_User")
+        query.findObjectsInBackgroundWithBlock { (userObjects, fetchError) -> Void in
+            
+            if fetchError == nil{
+                
+                if let users = userObjects{
+                    print("user:",users)
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +61,10 @@ class PageContentViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
-    
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        performSegueWithIdentifier("pushUserDetail", sender: self)
     }
+    
+    
+}
