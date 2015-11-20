@@ -13,13 +13,11 @@ class ViewController: UIViewController, UIPageViewControllerDelegate, UIPageView
     @IBOutlet var highlightBar: UIView!
     var pageController: UIPageViewController?
     var pageContent = ["Dishes", "Cooks"]
-    var currentIndex: Int?
-    var previousIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        self.title = "iCook"
         pageController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? UIPageViewController
         pageController?.dataSource = self
         pageController?.delegate = self
@@ -34,33 +32,21 @@ class ViewController: UIViewController, UIPageViewControllerDelegate, UIPageView
         self.view.addSubview((self.pageController?.view)!)
         self.pageController?.didMoveToParentViewController(self)
         
-        for views in (self.pageController?.view.subviews)!{
-            if views.isKindOfClass(UIScrollView){
-                (views as! UIScrollView).delegate = self
-            }
-        }
         
     }
     
 
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        updateMenuHiglight()
-    }
-
-    func updateMenuHiglight(){
-        
-        if currentIndex == 0 && previousIndex == 1{
-            UIView.animateWithDuration(0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.6, options: .TransitionCurlDown, animations: { () -> Void in
-                self.highlightBar.frame.origin.x -= 160
-                }, completion: nil)
-            previousIndex = 0
-        }else if currentIndex == 1 && previousIndex == 0{
+    func updateMenuHiglight(update: Bool){
+        if update{
             UIView.animateWithDuration(0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.6, options: .TransitionCurlDown, animations: { () -> Void in
                 self.highlightBar.frame.origin.x += 160
                 }, completion: nil)
-            previousIndex = 1
-            
+        }else{
+            UIView.animateWithDuration(0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.6, options: .TransitionCurlDown, animations: { () -> Void in
+                self.highlightBar.frame.origin.x -= 160
+                }, completion: nil)
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,13 +69,11 @@ class ViewController: UIViewController, UIPageViewControllerDelegate, UIPageView
         
         let vc = viewController as! PageContentViewController
         var index = vc.pageIndex
-        previousIndex = currentIndex
-        currentIndex = index
-        print("Before---current:\(currentIndex) previous:\(previousIndex)")
+        
+        updateMenuHiglight(false)
         if (index == 0) || (index == NSNotFound){
             return nil
         }
-        
         index!--
         
         return self.viewControllerAtIndex(index!)
@@ -99,15 +83,14 @@ class ViewController: UIViewController, UIPageViewControllerDelegate, UIPageView
 
         let vc = viewController as! PageContentViewController
         var index = vc.pageIndex
-        previousIndex = currentIndex
-        currentIndex = index
-        print("After---current:\(currentIndex) previous:\(previousIndex)")
+        
+        updateMenuHiglight(true)
         if (index == NSNotFound){
             return nil
         }
         
         index!++
-        
+
         if (index == pageContent.count){
             return nil
         }

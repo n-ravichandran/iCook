@@ -15,12 +15,25 @@ class DishesTableViewCell: UITableViewCell {
     @IBOutlet var dishImage: UIImageView!
     @IBOutlet var dishName: UILabel!
     @IBOutlet var cellBg: UIView!
+    @IBOutlet var ratings: CosmosView!
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         // Initialization code
         cellBg.layer.cornerRadius = 6
-        dishImage.layer.cornerRadius = 20
+        userImage.layer.cornerRadius = userImage.frame.height/2
+        userImage.layer.borderWidth = 1
+        userImage.layer.borderColor = UIColor.whiteColor().CGColor
+        userImage.clipsToBounds = true
+        
+        ratings.settings.updateOnTouch = false
+//        ratings.settings.colorFilled = UIColor.yellowColor()
+        ratings.settings.borderWidthEmpty = 0
+        
+        dishImage.layer.cornerRadius = 3
+        dishImage.clipsToBounds = true
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

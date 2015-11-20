@@ -1,17 +1,17 @@
 //
-//  UserImageTableCell.swift
+//  DetailsTableViewCell.swift
 //  iCook
 //
-//  Created by Niranjan Ravichandran on 03/11/15.
+//  Created by Niranjan Ravichandran on 06/11/15.
 //  Copyright © 2015 Team. All rights reserved.
 //
 
 import UIKit
 
-class UserImageTableCell: UITableViewCell {
+class DetailsTableViewCell: UITableViewCell {
 
-    @IBOutlet var profilePic: UIImageView!
-    @IBOutlet var userName: UILabel!
+    @IBOutlet var itemImage: UIImageView!
+    @IBOutlet var itemLable: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +24,4 @@ class UserImageTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func openMaps(sender: AnyObject) {
-        
-        print("Open user ocation on Maps")
-    }
 }

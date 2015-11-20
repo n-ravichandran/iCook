@@ -17,16 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
+
+        //Navigation Bar styles
         UINavigationBar.appearance().barTintColor = UIColor(red: 255/255, green: 55/255, blue: 55/255, alpha: 0.6)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+
         //Setting status bar color to white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
-        //Parse client key for iCook
+        //Parse client key
         Parse.setApplicationId("78tT2tK5pGpkGKlhqFEciW5Rjh69pVFcqoezVVoB",
             clientKey: "zO9kgfjlPzjdNKtsw4XOC7vMyMX8mMh6ptaHPypN")
         

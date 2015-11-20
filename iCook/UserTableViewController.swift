@@ -10,11 +10,23 @@ import UIKit
 
 class UserTableViewController: UITableViewController {
     
+    var userObject: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(UINib(nibName: "UserImageTableCell", bundle: nil), forCellReuseIdentifier: "UserImageCell")
+        tableView.registerNib(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
+        tableView.registerNib(UINib(nibName: "DishDetailsViewCell", bundle: nil), forCellReuseIdentifier: "DishDetailsCell")
         tableView.separatorStyle = .None
+        tableView.allowsSelection = false
+        
+        for parent in self.navigationController!.navigationBar.subviews {
+            for childView in parent.subviews {
+                if(childView is UIImageView) {
+                    childView.removeFromSuperview()
+                }
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,17 +49,32 @@ class UserTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0{
-            let cell = tableView.dequeueReusableCellWithIdentifier("UserImageCell", forIndexPath: indexPath) as? UserImageTableCell
-            cell?.userName.text = "Logan"
-            cell?.userLocation.setTitle("Location", forState: UIControlState.Normal)
-            tableView.rowHeight = 190
-            return cell!
-        }else{
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-            return cell
-        }
+        
+            if indexPath.row == 0{
+                let cell = tableView.dequeueReusableCellWithIdentifier("UserTableViewCell", forIndexPath: indexPath) as? UserTableViewCell
+                cell?.userName.text = userObject.firstName + " " + userObject.lastName
+                userObject.profilePic?.getDataInBackgroundWithBlock({ (imageData, imageError) -> Void in
+                    if imageData != nil{
+                        if let image = imageData{
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                
+                                cell?.profilePic.image = UIImage(data: image)
+                            })
+                        }
+                    }
+                })
+                
+                tableView.rowHeight = 190
+                return cell!
+            }else{
+                let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+                return cell
+            }
     }
+    
+
+
+
     
     
     /*
