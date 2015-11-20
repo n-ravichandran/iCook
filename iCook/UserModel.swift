@@ -20,6 +20,7 @@ struct User {
     let menu: [String]?
     let cuisine: String?
     let rating: Int?
+    let homeDelivery: Bool!
     
     init(responseObject: PFObject){
         
@@ -32,6 +33,7 @@ struct User {
         self.profilePic = responseObject["Photo"] as? PFFile
         self.cuisine = responseObject["Cuisine"] as? String
         self.rating = responseObject["Ratings"] as? Int
+        self.homeDelivery = responseObject["HomeDelivery"] as! Bool
     }
     
 }

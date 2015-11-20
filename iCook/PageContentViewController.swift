@@ -171,6 +171,7 @@ class PageContentViewController: UIViewController, UITableViewDataSource, UITabl
             
             let dishDetailVC = segue.destinationViewController as! DishDetailsViewController
             dishDetailVC.dishObject = dishes[selectedIndex]
+            dishDetailVC.userObject = users[selectedIndex]
             
         }else if pageIndex == 1 {
             

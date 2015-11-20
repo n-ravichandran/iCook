@@ -16,7 +16,7 @@ struct Dish {
     let ingredients: String?
     let dishImage: PFFile?
     let availabilityDuration: String?
-    let cost: String?
+    let cost: Int?
     let recipe: String?
     
     init(dishObject: PFObject){
@@ -24,7 +24,7 @@ struct Dish {
         cuisine = dishObject["Cuisine"]as? String
         ingredients = dishObject["Ingredients"] as? String
         availabilityDuration = dishObject["Availability_Duration"] as? String
-        cost = dishObject["Cost"] as? String
+        cost = dishObject["Cost"] as? Int
         recipe = dishObject["Recipe"] as? String
         dishImage = dishObject["Photo"] as? PFFile
     }
