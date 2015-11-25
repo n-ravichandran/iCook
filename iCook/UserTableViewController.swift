@@ -17,13 +17,17 @@ class UserTableViewController: UITableViewController {
         
         tableView.registerNib(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
         tableView.registerNib(UINib(nibName: "DishDetailsViewCell", bundle: nil), forCellReuseIdentifier: "DishDetailsCell")
+        tableView.registerNib(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "DescriptionCell")
+        
         tableView.separatorStyle = .None
         tableView.allowsSelection = false
         
         for parent in self.navigationController!.navigationBar.subviews {
             for childView in parent.subviews {
                 if(childView is UIImageView) {
-                    childView.removeFromSuperview()
+                    if childView.frame.height == 0.5{
+                        childView.removeFromSuperview()
+                    }
                 }
             }
         }
@@ -43,7 +47,7 @@ class UserTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 4
     }
     
     
@@ -53,6 +57,10 @@ class UserTableViewController: UITableViewController {
             if indexPath.row == 0{
                 let cell = tableView.dequeueReusableCellWithIdentifier("UserTableViewCell", forIndexPath: indexPath) as? UserTableViewCell
                 cell?.userName.text = userObject.firstName + " " + userObject.lastName
+                cell?.ratingsView.rating = Double(userObject.rating!)
+                cell?.phoneNumber = userObject.phone
+                cell?.mailId = userObject.email
+                cell?.locationButton.setTitle(userObject.city, forState: .Normal)
                 userObject.profilePic?.getDataInBackgroundWithBlock({ (imageData, imageError) -> Void in
                     if imageData != nil{
                         if let image = imageData{
@@ -67,8 +75,20 @@ class UserTableViewController: UITableViewController {
                 tableView.rowHeight = 190
                 return cell!
             }else{
-                let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-                return cell
+                let cell = tableView.dequeueReusableCellWithIdentifier("DescriptionCell", forIndexPath: indexPath) as? DescriptionTableViewCell
+                
+                if indexPath.row == 1{
+                    cell?.titleLable.text = "About"
+                    cell?.userDescription.text = userObject.description
+                }else if indexPath.row == 2{
+                    cell?.titleLable.text = "Menu"
+                    cell?.userDescription.text = userObject.menu
+                }else if indexPath.row == 3{
+                    cell?.titleLable.text = "Address"
+                    cell?.userDescription.text = userObject.address! + " " + userObject.city! + " " + userObject.state!
+                }
+                tableView.rowHeight = 80
+                return cell!
             }
     }
     

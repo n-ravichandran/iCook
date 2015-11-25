@@ -30,6 +30,8 @@
 		421D45F31BE0190C0063053C /* DishesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D45F11BE0190C0063053C /* DishesTableViewCell.swift */; };
 		421D45F41BE0190C0063053C /* DishesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421D45F21BE0190C0063053C /* DishesTableViewCell.xib */; };
 		421D45F61BE154130063053C /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D45F51BE154130063053C /* PageContentViewController.swift */; };
+		42246B061C052ECD001A446F /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42246B041C052ECD001A446F /* DescriptionTableViewCell.swift */; };
+		42246B071C052ECD001A446F /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42246B051C052ECD001A446F /* DescriptionTableViewCell.xib */; };
 		422AC7771BFBCDC100DC826C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422AC7761BFBCDC100DC826C /* UserModel.swift */; };
 		422AC77A1BFC1F2A00DC826C /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422AC7781BFC1F2A00DC826C /* UserTableViewCell.swift */; };
 		422AC77B1BFC1F2A00DC826C /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422AC7791BFC1F2A00DC826C /* UserTableViewCell.xib */; };
@@ -94,6 +96,8 @@
 		421D45F11BE0190C0063053C /* DishesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishesTableViewCell.swift; sourceTree = "<group>"; };
 		421D45F21BE0190C0063053C /* DishesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DishesTableViewCell.xib; sourceTree = "<group>"; };
 		421D45F51BE154130063053C /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		42246B041C052ECD001A446F /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		42246B051C052ECD001A446F /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		422AC7761BFBCDC100DC826C /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		422AC7781BFC1F2A00DC826C /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		422AC7791BFC1F2A00DC826C /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				42B7C35F1BED8EC700C02C73 /* DetailsTableViewCell.xib */,
 				421D45F21BE0190C0063053C /* DishesTableViewCell.xib */,
 				422AC77D1BFD69CF00DC826C /* CooksTableViewCell.xib */,
+				42246B051C052ECD001A446F /* DescriptionTableViewCell.xib */,
 				42F909201BBB6091004C38E8 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -303,6 +308,7 @@
 				421D45F11BE0190C0063053C /* DishesTableViewCell.swift */,
 				42B7C35E1BED8EC700C02C73 /* DetailsTableViewCell.swift */,
 				429CA9F21BE96D7D00A84D0E /* UserImageTableCell.swift */,
+				42246B041C052ECD001A446F /* DescriptionTableViewCell.swift */,
 				42F9091B1BBB6091004C38E8 /* iCook.xcdatamodeld */,
 			);
 			name = Model;
@@ -416,6 +422,7 @@
 				422AC77F1BFD69CF00DC826C /* CooksTableViewCell.xib in Resources */,
 				42F9091F1BBB6091004C38E8 /* Assets.xcassets in Resources */,
 				42B7C3611BED8EC700C02C73 /* DetailsTableViewCell.xib in Resources */,
+				42246B071C052ECD001A446F /* DescriptionTableViewCell.xib in Resources */,
 				42F9091A1BBB6091004C38E8 /* Main.storyboard in Resources */,
 				422AC77B1BFC1F2A00DC826C /* UserTableViewCell.xib in Resources */,
 				421D45F41BE0190C0063053C /* DishesTableViewCell.xib in Resources */,
@@ -445,6 +452,7 @@
 			files = (
 				42F9091D1BBB6091004C38E8 /* iCook.xcdatamodeld in Sources */,
 				420DB0761BED7CA5004D19F3 /* SettingsTableController.swift in Sources */,
+				42246B061C052ECD001A446F /* DescriptionTableViewCell.swift in Sources */,
 				42B7C3601BED8EC700C02C73 /* DetailsTableViewCell.swift in Sources */,
 				429CA9F91BE998B200A84D0E /* Dish.swift in Sources */,
 				422AC77A1BFC1F2A00DC826C /* UserTableViewCell.swift in Sources */,

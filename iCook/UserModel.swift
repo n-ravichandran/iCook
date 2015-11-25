@@ -17,23 +17,31 @@ struct User {
     let email: String!
     let profilePic: PFFile?
     let role: Int!
-    let menu: [String]?
+    let menu: String?
     let cuisine: String?
     let rating: Int?
     let homeDelivery: Bool!
+    let description: String?
+    let address: String?
+    let city: String?
+    let state: String?
     
     init(responseObject: PFObject){
         
         self.firstName = responseObject["FirstName"] as? String
         self.lastName = responseObject["LastName"] as? String
         self.phone = responseObject["PhoneNumber"] as? String
-        self.menu = responseObject["Menu"] as? [String]
+        self.menu = responseObject["Menu"] as? String
         self.email = responseObject["email"] as? String
         self.role = responseObject["Role"] as? Int
         self.profilePic = responseObject["Photo"] as? PFFile
         self.cuisine = responseObject["Cuisine"] as? String
         self.rating = responseObject["Ratings"] as? Int
         self.homeDelivery = responseObject["HomeDelivery"] as! Bool
+        self.description = responseObject["Description"] as? String
+        self.address = responseObject["Address_StreetName"] as? String
+        self.city = responseObject["Address_City"] as? String
+        self.state = responseObject["Address_State"] as? String
     }
     
 }

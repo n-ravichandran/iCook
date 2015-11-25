@@ -68,7 +68,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oAi-3u-brZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="2Tl-KQ-CAb">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="2Tl-KQ-CAb">
                             <connections>
                                 <segue destination="qK0-KP-eMH" kind="show" id="A8e-GY-7kn"/>
                             </connections>
@@ -486,6 +486,9 @@
             <point key="canvasLocation" x="867.5" y="160.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UFU-aa-Sxs"/>
     </inferredMetricsTieBreakers>
