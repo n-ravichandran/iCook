@@ -15,6 +15,7 @@ class CooksTableViewCell: UITableViewCell {
     @IBOutlet var cuisine: UILabel!
     @IBOutlet var userImage: UIImageView!
     
+    @IBOutlet var ratingsView: CosmosView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,9 @@ class CooksTableViewCell: UITableViewCell {
         cellBg.layer.cornerRadius = 6
         userImage.layer.cornerRadius = userImage.frame.height/2
         userImage.clipsToBounds = true
+        userImage.contentMode = .ScaleAspectFill
         
+        ratingsView.settings.borderWidthEmpty = 0
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

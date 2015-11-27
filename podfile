@@ -1,0 +1,4 @@
+platform :ios, '8.0'
+
+pod 'SKPhotoBrowser'
+use_frameworks!

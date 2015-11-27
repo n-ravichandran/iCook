@@ -27,6 +27,8 @@ class UserTableViewCell: UITableViewCell {
         profilePic.layer.borderColor = UIColor.whiteColor().CGColor
         profilePic.layer.borderWidth = 1
         profilePic.clipsToBounds = true
+        profilePic.userInteractionEnabled = true
+        profilePic.contentMode = .ScaleAspectFill
         
         //Ratings styles
         ratingsView.settings.colorFilled = UIColor.yellowColor()

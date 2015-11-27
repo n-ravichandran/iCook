@@ -136,7 +136,7 @@ class PageContentViewController: UIViewController, UITableViewDataSource, UITabl
             if users.count > 0{
                 cell.cookName.text = users[indexPath.row].firstName + " "+users[indexPath.row].lastName
                 cell.cuisine.text = users[indexPath.row].cuisine
-                
+                cell.ratingsView.rating = Double(users[indexPath.row].rating!)
                 users[indexPath.row].profilePic?.getDataInBackgroundWithBlock({ (userImageData, imageDataError) -> Void in
                     
                     if userImageData != nil{

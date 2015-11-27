@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SKPhotoBrowser
 
-class UserTableViewController: UITableViewController {
+class UserTableViewController: UITableViewController, SKPhotoBrowserDelegate {
     
     var userObject: User!
+    var userImageData: NSData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +69,8 @@ class UserTableViewController: UITableViewController {
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                                 
                                 cell?.profilePic.image = UIImage(data: image)
+                                cell?.profilePic.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "showImage"))
+                                self.userImageData = image
                             })
                         }
                     }
@@ -92,9 +96,21 @@ class UserTableViewController: UITableViewController {
             }
     }
     
+    func showImage(){
+        var images = [SKPhoto]()
+        let photo = SKPhoto.photoWithImage(UIImage(data: userImageData!)!)
+        images.append(photo)
+        
+        // Creating PhotoBrowser Instance, and present.
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(0)
+        browser.delegate = self
+        presentViewController(browser, animated: true, completion: {})
+    }
 
-
-
+    func didShowPhotoAtIndex(index: Int) {
+        print("Zoom User Image")
+    }
     
     
     /*

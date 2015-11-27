@@ -22,6 +22,21 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEp-y2-cKN">
                         <rect key="frame" x="4" y="2" width="312" height="95.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTY-V9-Lzd" customClass="CosmosView" customModule="iCook" customModuleProvider="target">
+                                <rect key="frame" x="96" y="65" width="108" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="G5m-vr-t8Q"/>
+                                    <constraint firstAttribute="width" constant="108" id="V9m-cv-MV9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -58,6 +73,7 @@
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="KEp-y2-cKN" secondAttribute="trailing" constant="-4" id="6ef-GK-imi"/>
                     <constraint firstItem="qsf-Jr-wdl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Avv-Zf-m4X"/>
+                    <constraint firstItem="LTY-V9-Lzd" firstAttribute="leading" secondItem="qsf-Jr-wdl" secondAttribute="trailing" constant="7" id="CKX-aG-MmA"/>
                     <constraint firstItem="qsf-Jr-wdl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="H0H-Y8-yap"/>
                     <constraint firstItem="b9t-da-te9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="MJZ-mt-Ycv"/>
                     <constraint firstAttribute="bottomMargin" secondItem="KEp-y2-cKN" secondAttribute="bottom" constant="-6" id="PeH-wY-OSy"/>
@@ -66,6 +82,7 @@
                     <constraint firstItem="b9t-da-te9" firstAttribute="leading" secondItem="qsf-Jr-wdl" secondAttribute="trailing" constant="9" id="fD7-Mk-I3p"/>
                     <constraint firstItem="1sb-Cz-26j" firstAttribute="top" secondItem="b9t-da-te9" secondAttribute="bottom" constant="8" id="fx2-vh-v8A"/>
                     <constraint firstItem="KEp-y2-cKN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="kSm-Du-Qk4"/>
+                    <constraint firstItem="LTY-V9-Lzd" firstAttribute="top" secondItem="6fs-q7-xSc" secondAttribute="bottom" constant="7" id="rWy-Zm-asj"/>
                     <constraint firstItem="1sb-Cz-26j" firstAttribute="leading" secondItem="qsf-Jr-wdl" secondAttribute="trailing" constant="8" id="tBc-fa-z1E"/>
                     <constraint firstAttribute="leadingMargin" secondItem="KEp-y2-cKN" secondAttribute="leading" constant="4" id="zGp-zB-aX0"/>
                 </constraints>
@@ -75,6 +92,7 @@
                 <outlet property="cellBg" destination="KEp-y2-cKN" id="GcN-23-JLN"/>
                 <outlet property="cookName" destination="b9t-da-te9" id="QDZ-fk-77K"/>
                 <outlet property="cuisine" destination="6fs-q7-xSc" id="m3H-la-Stj"/>
+                <outlet property="ratingsView" destination="LTY-V9-Lzd" id="QHJ-xO-Gzt"/>
                 <outlet property="userImage" destination="qsf-Jr-wdl" id="Rzk-eK-FKd"/>
             </connections>
             <point key="canvasLocation" x="483" y="371"/>

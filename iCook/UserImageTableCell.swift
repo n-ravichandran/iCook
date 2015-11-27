@@ -16,6 +16,7 @@ class UserImageTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.profilePic.contentMode = .ScaleAspectFill
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

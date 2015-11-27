@@ -51,6 +51,7 @@
 		42F909221BBB6091004C38E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F909201BBB6091004C38E8 /* LaunchScreen.storyboard */; };
 		42F9092D1BBB6091004C38E8 /* iCookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F9092C1BBB6091004C38E8 /* iCookTests.swift */; };
 		42F909381BBB6091004C38E8 /* iCookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F909371BBB6091004C38E8 /* iCookUITests.swift */; };
+		7CE7B91B85D0A28E4D35C863 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E066A65456105D1089B060B4 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,9 @@
 		42F909331BBB6091004C38E8 /* iCookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F909371BBB6091004C38E8 /* iCookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCookUITests.swift; sourceTree = "<group>"; };
 		42F909391BBB6091004C38E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A604E2887856997215679B78 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AECDB6895E5FAB6BBC4B2E1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E066A65456105D1089B060B4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				421D45CE1BE006E70063053C /* Bolts.framework in Frameworks */,
 				421D45D31BE006E70063053C /* ParseTwitterUtils.framework in Frameworks */,
 				421D45D21BE006E70063053C /* ParseFacebookUtilsV4.framework in Frameworks */,
+				7CE7B91B85D0A28E4D35C863 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +220,8 @@
 				42F9092B1BBB6091004C38E8 /* iCookTests */,
 				42F909361BBB6091004C38E8 /* iCookUITests */,
 				42F909121BBB6091004C38E8 /* Products */,
+				A301ED62669CA3167E6E309A /* Pods */,
+				C71F178316AE7CE62B2F16B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -314,6 +321,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A301ED62669CA3167E6E309A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AECDB6895E5FAB6BBC4B2E1A /* Pods.debug.xcconfig */,
+				A604E2887856997215679B78 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C71F178316AE7CE62B2F16B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E066A65456105D1089B060B4 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,9 +345,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42F9093C1BBB6091004C38E8 /* Build configuration list for PBXNativeTarget "iCook" */;
 			buildPhases = (
+				78A9E2183F960992E575FFCB /* Check Pods Manifest.lock */,
 				42F9090D1BBB6091004C38E8 /* Sources */,
 				42F9090E1BBB6091004C38E8 /* Frameworks */,
 				42F9090F1BBB6091004C38E8 /* Resources */,
+				1BB380AEDC8CCB0A8CF76390 /* Embed Pods Frameworks */,
+				8260E6677BDAF8FAFCB96ECE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -444,6 +471,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BB380AEDC8CCB0A8CF76390 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78A9E2183F960992E575FFCB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8260E6677BDAF8FAFCB96ECE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42F9090D1BBB6091004C38E8 /* Sources */ = {
@@ -604,6 +679,7 @@
 		};
 		42F9093D1BBB6091004C38E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AECDB6895E5FAB6BBC4B2E1A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -622,6 +698,7 @@
 		};
 		42F9093E1BBB6091004C38E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A604E2887856997215679B78 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

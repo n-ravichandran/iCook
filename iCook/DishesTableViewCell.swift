@@ -23,15 +23,17 @@ class DishesTableViewCell: UITableViewCell {
         // Initialization code
         cellBg.layer.cornerRadius = 6
         userImage.layer.cornerRadius = userImage.frame.height/2
-        userImage.layer.borderWidth = 1
-        userImage.layer.borderColor = UIColor.whiteColor().CGColor
+//        userImage.layer.borderWidth = 1
+//        userImage.layer.borderColor = UIColor.whiteColor().CGColor
         userImage.clipsToBounds = true
+        userImage.contentMode = .ScaleAspectFill
         
         ratings.settings.updateOnTouch = false
 //        ratings.settings.colorFilled = UIColor.yellowColor()
         ratings.settings.borderWidthEmpty = 0
         
         dishImage.layer.cornerRadius = 3
+        dishImage.contentMode = .ScaleAspectFill
         dishImage.clipsToBounds = true
         
     }
