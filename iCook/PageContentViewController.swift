@@ -16,8 +16,7 @@ class PageContentViewController: UIViewController, UITableViewDataSource, UITabl
     var pageIndex: Int?
     var users = [User]()
     var dishes = [Dish]()
-    var userImages = [NSData]()
-    var dishImages = [NSData]()
+    var userDict = [String: User]()
     var selectedIndex: Int!
     
     override func viewDidLoad() {
@@ -48,6 +47,7 @@ class PageContentViewController: UIViewController, UITableViewDataSource, UITabl
                 
                     for item in userObjects!{
                         self.users.append(User(responseObject: item))
+                        self.userDict[item.objectId!] = User(responseObject: item)
                     }
                 
                 self.tableView.reloadData()
@@ -82,7 +82,11 @@ class PageContentViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        if pageIndex == 0{
+            return dishes.count
+        }else{
+            return users.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -91,13 +95,16 @@ class PageContentViewController: UIViewController, UITableViewDataSource, UITabl
             
             let cell = tableView.dequeueReusableCellWithIdentifier("DishCell") as! DishesTableViewCell
             cell.selectionStyle = .None
+            let currentUser = userDict[dishes[indexPath.row].userId]
             
             if ((users.count > 0) && (dishes.count > 0)){
-                cell.sellerName.text = (users[indexPath.row].firstName + " "+users[indexPath.row].lastName)
-                cell.dishName.text = dishes[indexPath.row].name
-                cell.ratings.rating = Double(users[indexPath.row].rating!)
                 
-                users[indexPath.row].profilePic?.getDataInBackgroundWithBlock({ (imageData, imageError) -> Void in
+                cell.sellerName.text = (currentUser?.firstName)! + " " + (currentUser?.lastName)!
+                    
+                cell.dishName.text = dishes[indexPath.row].name
+                cell.ratings.rating = Double((currentUser?.rating)!)
+                
+                currentUser!.profilePic?.getDataInBackgroundWithBlock({ (imageData, imageError) -> Void in
                     
                     if imageData != nil {
                         if let image = imageData{
@@ -171,12 +178,12 @@ class PageContentViewController: UIViewController, UITableViewDataSource, UITabl
             
             let dishDetailVC = segue.destinationViewController as! DishDetailsViewController
             dishDetailVC.dishObject = dishes[selectedIndex]
-            dishDetailVC.userObject = users[selectedIndex]
+            dishDetailVC.userObject = userDict[dishes[selectedIndex].userId]
             
         }else if pageIndex == 1 {
             
             let userTableVC = segue.destinationViewController as! UserTableViewController
-            userTableVC.userObject = users[selectedIndex]
+            userTableVC.userObject = userDict[dishes[selectedIndex].userId]
         }
         
     }
