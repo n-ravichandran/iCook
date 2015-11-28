@@ -132,7 +132,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="username" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ik6-lP-ZgK">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="username" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ik6-lP-ZgK">
                                 <rect key="frame" x="62" y="130" width="250" height="50"/>
                                 <animations/>
                                 <constraints>
@@ -143,7 +143,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="password" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VdR-B3-s4r">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="password" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VdR-B3-s4r">
                                 <rect key="frame" x="62" y="201" width="250" height="50"/>
                                 <animations/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -189,12 +189,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6I-34-Q7W">
+                                <rect key="frame" x="160" y="319" width="55" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Sign Up"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.98823529409999999" green="0.3294117647" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fRT-Xw-c3M" firstAttribute="top" secondItem="JNk-tQ-c5z" secondAttribute="bottom" constant="7" id="88v-aS-y6b"/>
+                            <constraint firstItem="l6I-34-Q7W" firstAttribute="top" secondItem="oRd-Cj-UWp" secondAttribute="bottom" constant="6" id="8tO-6c-ues"/>
                             <constraint firstItem="oRd-Cj-UWp" firstAttribute="top" secondItem="VdR-B3-s4r" secondAttribute="bottom" constant="32" id="9bE-3G-uoU"/>
+                            <constraint firstItem="l6I-34-Q7W" firstAttribute="centerX" secondItem="SOI-M8-CWq" secondAttribute="centerX" id="C4v-Pb-aCg"/>
                             <constraint firstItem="uhB-vm-T9i" firstAttribute="top" secondItem="JNk-tQ-c5z" secondAttribute="bottom" constant="11" id="CoG-lW-OKw"/>
                             <constraint firstItem="uhB-vm-T9i" firstAttribute="centerX" secondItem="SOI-M8-CWq" secondAttribute="centerX" id="Kd7-B4-aqs"/>
                             <constraint firstItem="fRT-Xw-c3M" firstAttribute="leading" secondItem="SOI-M8-CWq" secondAttribute="leadingMargin" constant="7" id="QUA-d1-Tf4"/>
@@ -204,6 +212,12 @@
                             <constraint firstItem="Ik6-lP-ZgK" firstAttribute="top" secondItem="JNk-tQ-c5z" secondAttribute="bottom" constant="110" id="hv1-5Q-TNG"/>
                             <constraint firstItem="VdR-B3-s4r" firstAttribute="top" secondItem="Ik6-lP-ZgK" secondAttribute="bottom" constant="21" id="w1G-ba-Vh4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ud9-6b-81J"/>
+                                <exclude reference="ZMV-Lp-7So"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -374,7 +388,7 @@
                                 <rect key="frame" x="77" y="535" width="101" height="19"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEK-A7-uQh">
@@ -475,7 +489,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="3G7-Tv-9N0">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3G7-Tv-9N0" id="aQ2-jx-aKV">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -573,6 +587,6 @@
         <image name="username" width="250" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UFU-aa-Sxs"/>
+        <segue reference="eZn-YG-bvO"/>
     </inferredMetricsTieBreakers>
 </document>

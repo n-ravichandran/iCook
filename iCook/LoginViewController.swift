@@ -22,8 +22,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         for item in loginTextFields{
             item.attributedPlaceholder = NSAttributedString(string: item.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 231/255, blue: 220/255, alpha: 1)])
             item.delegate = self
+            item.alpha = 0
         }
         loginButton.layer.cornerRadius = 6
+        loginButton.alpha = 0
+        
+    }
+    
+
+    
+    override func viewDidAppear(animated: Bool) {
+
+        UIView.animateWithDuration(0.8, delay: 0.1, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.6, options: .CurveLinear, animations: { () -> Void in
+            
+            for item in self.loginTextFields {
+                item.center.x = self.view.center.x
+                item.alpha = 1
+            }
+            self.loginButton.alpha = 1
+            
+            }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

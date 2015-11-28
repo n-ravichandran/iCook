@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SKPhotoBrowser
 
 class DishDetailsViewController: UIViewController {
 
     var dishObject: Dish!
     var userObject: User!
+    var dishImageData: NSData!
 
     @IBOutlet var dishImagView: UIImageView!
     @IBOutlet var availability: UILabel!
@@ -56,6 +58,9 @@ class DishDetailsViewController: UIViewController {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         
                         self.dishImagView.image = UIImage(data: data)
+                        self.dishImageData = data
+                        self.dishImagView.userInteractionEnabled = true
+                        self.dishImagView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "showImageViewer"))
                     })
                     
                 }
@@ -102,14 +107,16 @@ class DishDetailsViewController: UIViewController {
         let userDetailsVC = segue.destinationViewController as? UserTableViewController
         userDetailsVC?.userObject = self.userObject
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func showImageViewer() {
+        var images = [SKPhoto]()
+        let photo = SKPhoto.photoWithImage(UIImage(data: dishImageData)!)
+        images.append(photo)
+        
+        // Creating PhotoBrowser Instance, and present.
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(0)
+        presentViewController(browser, animated: true, completion: {})
     }
-    */
 
 }
