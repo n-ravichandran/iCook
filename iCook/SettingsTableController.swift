@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import Parse
 
 class SettingsTableController: UITableViewController {
     
-    let items: [String] = ["MyAccount", "About"]
-
+    let items: [String] = ["My Account", "About", "Login"]
+    var user = PFUser.currentUser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Settings"
         tableView.separatorStyle = .None
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,7 +47,38 @@ class SettingsTableController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         cell.textLabel?.text = items[indexPath.row]
+        cell.textLabel?.textColor = UIColor.darkGrayColor()
+        if indexPath.row == 2{
+            if user != nil{
+                cell.textLabel?.text = "Logout"
+            }
+            
+        }
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0{
+            if user != nil {
+                
+            }else{
+                performSegueWithIdentifier("Login", sender: self)
+            }
+        }else if indexPath.row == 1{
+            
+        }else if indexPath.row == 2{
+            if user != nil{
+                PFUser.logOut()
+                let alert = UIAlertController(title: "Logout", message: "You have successfully logged out.", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (UIAlertAction) -> Void in
+                    
+                self.navigationController?.popToRootViewControllerAnimated(true)
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }else{
+                performSegueWithIdentifier("Login", sender: self)
+            }
+        }
     }
     
 }

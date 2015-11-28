@@ -18,7 +18,6 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet var phone: UIButton!
     
     var phoneNumber: String?
-    var mailId: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,9 +40,6 @@ class UserTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func sendMail(sender: AnyObject) {
-        
-    }
     
     @IBAction func makeCall(sender: AnyObject) {
         print(phoneNumber)

@@ -32,6 +32,7 @@
 		421D45F61BE154130063053C /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D45F51BE154130063053C /* PageContentViewController.swift */; };
 		42246B061C052ECD001A446F /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42246B041C052ECD001A446F /* DescriptionTableViewCell.swift */; };
 		42246B071C052ECD001A446F /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42246B051C052ECD001A446F /* DescriptionTableViewCell.xib */; };
+		42246B231C08F585001A446F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42246B221C08F585001A446F /* LoginViewController.swift */; };
 		422AC7771BFBCDC100DC826C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422AC7761BFBCDC100DC826C /* UserModel.swift */; };
 		422AC77A1BFC1F2A00DC826C /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422AC7781BFC1F2A00DC826C /* UserTableViewCell.swift */; };
 		422AC77B1BFC1F2A00DC826C /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422AC7791BFC1F2A00DC826C /* UserTableViewCell.xib */; };
@@ -99,6 +100,7 @@
 		421D45F51BE154130063053C /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		42246B041C052ECD001A446F /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		42246B051C052ECD001A446F /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		42246B221C08F585001A446F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		422AC7761BFBCDC100DC826C /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		422AC7781BFC1F2A00DC826C /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		422AC7791BFC1F2A00DC826C /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
@@ -242,7 +244,6 @@
 				42F909481BBB60D7004C38E8 /* Model */,
 				42F909451BBB60A2004C38E8 /* Controller */,
 				42F909471BBB60C6004C38E8 /* Supporting Files */,
-				421D45EA1BE0130F0063053C /* iCook-Bridging-Header.h */,
 			);
 			path = iCook;
 			sourceTree = "<group>";
@@ -268,6 +269,7 @@
 		42F909451BBB60A2004C38E8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				42246B221C08F585001A446F /* LoginViewController.swift */,
 				422AC7881BFE9F8C00DC826C /* DishDetailsViewController.swift */,
 				420DB0751BED7CA5004D19F3 /* SettingsTableController.swift */,
 				429CA9F01BE96C9700A84D0E /* UserTableViewController.swift */,
@@ -294,6 +296,7 @@
 		42F909471BBB60C6004C38E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				421D45EA1BE0130F0063053C /* iCook-Bridging-Header.h */,
 				420DB0731BED79CF004D19F3 /* CosmosDistrib.swift */,
 				421D45EE1BE013170063053C /* RevealViewController */,
 				421D45E91BE007830063053C /* FrameWorks */,
@@ -525,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42246B231C08F585001A446F /* LoginViewController.swift in Sources */,
 				42F9091D1BBB6091004C38E8 /* iCook.xcdatamodeld in Sources */,
 				420DB0761BED7CA5004D19F3 /* SettingsTableController.swift in Sources */,
 				42246B061C052ECD001A446F /* DescriptionTableViewCell.swift in Sources */,

@@ -8,8 +8,9 @@
 
 import UIKit
 import SKPhotoBrowser
+import MessageUI
 
-class UserTableViewController: UITableViewController, SKPhotoBrowserDelegate {
+class UserTableViewController: UITableViewController, SKPhotoBrowserDelegate, MFMailComposeViewControllerDelegate {
     
     var userObject: User!
     var userImageData: NSData?
@@ -61,7 +62,7 @@ class UserTableViewController: UITableViewController, SKPhotoBrowserDelegate {
                 cell?.userName.text = userObject.firstName + " " + userObject.lastName
                 cell?.ratingsView.rating = Double(userObject.rating!)
                 cell?.phoneNumber = userObject.phone
-                cell?.mailId = userObject.email
+                cell?.mail.addTarget(self, action: Selector("sendMail"), forControlEvents: UIControlEvents.TouchUpInside)
                 cell?.locationButton.setTitle(userObject.city, forState: .Normal)
                 userObject.profilePic?.getDataInBackgroundWithBlock({ (imageData, imageError) -> Void in
                     if imageData != nil{
@@ -112,6 +113,38 @@ class UserTableViewController: UITableViewController, SKPhotoBrowserDelegate {
         print("Zoom User Image")
     }
     
+    func sendMail(){
+        
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["someone@somewhere.com"])
+        mailComposerVC.setSubject("Awesome Food")
+        mailComposerVC.setMessageBody("<p style=color:gray;>Try the home made food by \(userObject.firstName) \(userObject.lastName).</p><p>This person cooks amazing food!</p>", isHTML: true)
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        
+        let alert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: MFMailComposeViewControllerDelegate Method
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?){
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     /*
     // Override to support conditional editing of the table view.
