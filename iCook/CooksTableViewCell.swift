@@ -26,6 +26,7 @@ class CooksTableViewCell: UITableViewCell {
         userImage.contentMode = .ScaleAspectFill
         
         ratingsView.settings.borderWidthEmpty = 0
+        ratingsView.settings.updateOnTouch = false
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -16,6 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var loginButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -81,7 +82,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 print("Login success")
                 let alert = UIAlertController(title: "Login Success!", message: "", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) -> Void in
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        self.navigationController?.popToRootViewControllerAnimated(true)
+                    })
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
             }

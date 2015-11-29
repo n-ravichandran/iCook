@@ -44,6 +44,13 @@
 		429CA9F91BE998B200A84D0E /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429CA9F81BE998B200A84D0E /* Dish.swift */; };
 		42B7C3601BED8EC700C02C73 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7C35E1BED8EC700C02C73 /* DetailsTableViewCell.swift */; };
 		42B7C3611BED8EC700C02C73 /* DetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B7C35F1BED8EC700C02C73 /* DetailsTableViewCell.xib */; };
+		42DE77861C0A3966005A111C /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE77851C0A3966005A111C /* SignUpTableViewController.swift */; };
+		42DE77891C0A419D005A111C /* TextFieldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE77871C0A419D005A111C /* TextFieldTableCell.swift */; };
+		42DE778A1C0A419D005A111C /* TextFieldTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DE77881C0A419D005A111C /* TextFieldTableCell.xib */; };
+		42F4BC3F1C0A503D0006CBB4 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BC3D1C0A503D0006CBB4 /* SwitchTableViewCell.swift */; };
+		42F4BC401C0A503D0006CBB4 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F4BC3E1C0A503D0006CBB4 /* SwitchTableViewCell.xib */; };
+		42F4BC421C0A6E6D0006CBB4 /* DishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BC411C0A6E6D0006CBB4 /* DishListViewController.swift */; };
+		42F4BC441C0A997E0006CBB4 /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BC431C0A997E0006CBB4 /* DishViewController.swift */; };
 		42F909151BBB6091004C38E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F909141BBB6091004C38E8 /* AppDelegate.swift */; };
 		42F909171BBB6091004C38E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F909161BBB6091004C38E8 /* ViewController.swift */; };
 		42F9091A1BBB6091004C38E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F909181BBB6091004C38E8 /* Main.storyboard */; };
@@ -112,6 +119,13 @@
 		429CA9F81BE998B200A84D0E /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		42B7C35E1BED8EC700C02C73 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		42B7C35F1BED8EC700C02C73 /* DetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsTableViewCell.xib; sourceTree = "<group>"; };
+		42DE77851C0A3966005A111C /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
+		42DE77871C0A419D005A111C /* TextFieldTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableCell.swift; sourceTree = "<group>"; };
+		42DE77881C0A419D005A111C /* TextFieldTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableCell.xib; sourceTree = "<group>"; };
+		42F4BC3D1C0A503D0006CBB4 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		42F4BC3E1C0A503D0006CBB4 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		42F4BC411C0A6E6D0006CBB4 /* DishListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishListViewController.swift; sourceTree = "<group>"; };
+		42F4BC431C0A997E0006CBB4 /* DishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
 		42F909111BBB6091004C38E8 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F909141BBB6091004C38E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42F909161BBB6091004C38E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +283,9 @@
 		42F909451BBB60A2004C38E8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				42F4BC431C0A997E0006CBB4 /* DishViewController.swift */,
+				42F4BC411C0A6E6D0006CBB4 /* DishListViewController.swift */,
+				42DE77851C0A3966005A111C /* SignUpTableViewController.swift */,
 				42246B221C08F585001A446F /* LoginViewController.swift */,
 				422AC7881BFE9F8C00DC826C /* DishDetailsViewController.swift */,
 				420DB0751BED7CA5004D19F3 /* SettingsTableController.swift */,
@@ -283,12 +300,14 @@
 			isa = PBXGroup;
 			children = (
 				42F909181BBB6091004C38E8 /* Main.storyboard */,
+				42F909201BBB6091004C38E8 /* LaunchScreen.storyboard */,
 				422AC7791BFC1F2A00DC826C /* UserTableViewCell.xib */,
 				42B7C35F1BED8EC700C02C73 /* DetailsTableViewCell.xib */,
 				421D45F21BE0190C0063053C /* DishesTableViewCell.xib */,
 				422AC77D1BFD69CF00DC826C /* CooksTableViewCell.xib */,
 				42246B051C052ECD001A446F /* DescriptionTableViewCell.xib */,
-				42F909201BBB6091004C38E8 /* LaunchScreen.storyboard */,
+				42DE77881C0A419D005A111C /* TextFieldTableCell.xib */,
+				42F4BC3E1C0A503D0006CBB4 /* SwitchTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -311,6 +330,8 @@
 		42F909481BBB60D7004C38E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42F4BC3D1C0A503D0006CBB4 /* SwitchTableViewCell.swift */,
+				42DE77871C0A419D005A111C /* TextFieldTableCell.swift */,
 				429CA9F81BE998B200A84D0E /* Dish.swift */,
 				422AC7761BFBCDC100DC826C /* UserModel.swift */,
 				422AC7781BFC1F2A00DC826C /* UserTableViewCell.swift */,
@@ -449,8 +470,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F909221BBB6091004C38E8 /* LaunchScreen.storyboard in Resources */,
+				42F4BC401C0A503D0006CBB4 /* SwitchTableViewCell.xib in Resources */,
 				422AC77F1BFD69CF00DC826C /* CooksTableViewCell.xib in Resources */,
 				42F9091F1BBB6091004C38E8 /* Assets.xcassets in Resources */,
+				42DE778A1C0A419D005A111C /* TextFieldTableCell.xib in Resources */,
 				42B7C3611BED8EC700C02C73 /* DetailsTableViewCell.xib in Resources */,
 				42246B071C052ECD001A446F /* DescriptionTableViewCell.xib in Resources */,
 				42F9091A1BBB6091004C38E8 /* Main.storyboard in Resources */,
@@ -528,10 +551,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42DE77891C0A419D005A111C /* TextFieldTableCell.swift in Sources */,
 				42246B231C08F585001A446F /* LoginViewController.swift in Sources */,
+				42F4BC3F1C0A503D0006CBB4 /* SwitchTableViewCell.swift in Sources */,
 				42F9091D1BBB6091004C38E8 /* iCook.xcdatamodeld in Sources */,
 				420DB0761BED7CA5004D19F3 /* SettingsTableController.swift in Sources */,
 				42246B061C052ECD001A446F /* DescriptionTableViewCell.swift in Sources */,
+				42F4BC441C0A997E0006CBB4 /* DishViewController.swift in Sources */,
 				42B7C3601BED8EC700C02C73 /* DetailsTableViewCell.swift in Sources */,
 				429CA9F91BE998B200A84D0E /* Dish.swift in Sources */,
 				422AC77A1BFC1F2A00DC826C /* UserTableViewCell.swift in Sources */,
@@ -544,6 +570,8 @@
 				429CA9F11BE96C9700A84D0E /* UserTableViewController.swift in Sources */,
 				429CA9F41BE96D7D00A84D0E /* UserImageTableCell.swift in Sources */,
 				421D45F31BE0190C0063053C /* DishesTableViewCell.swift in Sources */,
+				42F4BC421C0A6E6D0006CBB4 /* DishListViewController.swift in Sources */,
+				42DE77861C0A3966005A111C /* SignUpTableViewController.swift in Sources */,
 				421D45ED1BE013100063053C /* SWRevealViewController.m in Sources */,
 				420DB0741BED79CF004D19F3 /* CosmosDistrib.swift in Sources */,
 			);

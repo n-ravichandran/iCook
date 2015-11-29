@@ -12,7 +12,7 @@ import Parse
 class SettingsTableController: UITableViewController {
     
     let items: [String] = ["My Account", "About", "Login"]
-    var user = PFUser.currentUser()
+    var user: PFUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class SettingsTableController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-
+        user = PFUser.currentUser()
         self.tableView.reloadData()
     }
     
@@ -60,7 +60,9 @@ class SettingsTableController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0{
             if user != nil {
-                
+//                performSegueWithIdentifier("SignUp", sender: self)
+                let signUpVC = self.storyboard?.instantiateViewControllerWithIdentifier("SignUpViewController") as! SignUpTableViewController
+                self.navigationController?.pushViewController(signUpVC, animated: true)
             }else{
                 performSegueWithIdentifier("Login", sender: self)
             }

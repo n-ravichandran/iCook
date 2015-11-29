@@ -32,6 +32,7 @@ class UserTableViewCell: UITableViewCell {
         //Ratings styles
         ratingsView.settings.colorFilled = UIColor.yellowColor()
         ratingsView.settings.borderColorEmpty = UIColor.yellowColor()
+        ratingsView.settings.updateOnTouch = false
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
