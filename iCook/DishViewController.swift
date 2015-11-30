@@ -24,13 +24,14 @@ class DishViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     var dishObject: Dish?
     let pickerData = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let newDish = PFObject(className: "Dish")
+    var config =  SwiftLoader.Config()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dayAvailability.delegate = self
         dayAvailability.dataSource = self
-        
+
         imagePicker.delegate = self
         
         for item in dishTextfields {
@@ -68,6 +69,7 @@ class DishViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         }
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -110,6 +112,16 @@ class DishViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     func saveNewDish() {
+        
+        config.spinnerColor = UIColor.whiteColor()
+        config.backgroundColor = UIColor(red: 255/255, green: 55/255, blue: 55/255, alpha: 0.8)
+        config.foregroundAlpha = 0.5
+        config.size = 150
+        config.speed = 1
+        config.titleTextColor = UIColor.whiteColor()
+        SwiftLoader.setConfig(config)
+        SwiftLoader.show("Saving...", animated: true)
+        
         for item in dishTextfields {
             if item.tag == 1 {
                 newDish["Name"] = item.text
@@ -124,6 +136,7 @@ class DishViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         newDish.saveInBackgroundWithBlock { (savedStatus, saveError) -> Void in
             
             if savedStatus {
+                SwiftLoader.hide()
                 let alert = UIAlertController(title: "Success", message: "Added a new item to your dish list.", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (UIAlertAction) -> Void in
 //                    let viewControllers: [UIViewController] = (self.navigationController?.viewControllers)! as [UIViewController]

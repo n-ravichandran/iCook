@@ -51,6 +51,7 @@
 		42F4BC401C0A503D0006CBB4 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F4BC3E1C0A503D0006CBB4 /* SwitchTableViewCell.xib */; };
 		42F4BC421C0A6E6D0006CBB4 /* DishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BC411C0A6E6D0006CBB4 /* DishListViewController.swift */; };
 		42F4BC441C0A997E0006CBB4 /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BC431C0A997E0006CBB4 /* DishViewController.swift */; };
+		42F4BC461C0B7FED0006CBB4 /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BC451C0B7FED0006CBB4 /* SwiftLoader.swift */; };
 		42F909151BBB6091004C38E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F909141BBB6091004C38E8 /* AppDelegate.swift */; };
 		42F909171BBB6091004C38E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F909161BBB6091004C38E8 /* ViewController.swift */; };
 		42F9091A1BBB6091004C38E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F909181BBB6091004C38E8 /* Main.storyboard */; };
@@ -126,6 +127,7 @@
 		42F4BC3E1C0A503D0006CBB4 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		42F4BC411C0A6E6D0006CBB4 /* DishListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishListViewController.swift; sourceTree = "<group>"; };
 		42F4BC431C0A997E0006CBB4 /* DishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
+		42F4BC451C0B7FED0006CBB4 /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
 		42F909111BBB6091004C38E8 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F909141BBB6091004C38E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42F909161BBB6091004C38E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				421D45EA1BE0130F0063053C /* iCook-Bridging-Header.h */,
+				42F4BC451C0B7FED0006CBB4 /* SwiftLoader.swift */,
 				420DB0731BED79CF004D19F3 /* CosmosDistrib.swift */,
 				421D45EE1BE013170063053C /* RevealViewController */,
 				421D45E91BE007830063053C /* FrameWorks */,
@@ -551,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F4BC461C0B7FED0006CBB4 /* SwiftLoader.swift in Sources */,
 				42DE77891C0A419D005A111C /* TextFieldTableCell.swift in Sources */,
 				42246B231C08F585001A446F /* LoginViewController.swift in Sources */,
 				42F4BC3F1C0A503D0006CBB4 /* SwitchTableViewCell.swift in Sources */,
